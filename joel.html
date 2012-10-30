@@ -6,14 +6,16 @@
 	body {
 		margin: 0;
 		padding: 24px;
-		font:normal 12px/14px Arial;
-		background:red;
+		font:normal 12px/14px Arial, sans-serif;
+		background:gray;
+		
 	}
 
 	#slot-window {
 		height:14px;
 		overflow:hidden;
-		position:relative;	
+		position:relative;
+		border-style: solid;	
 	}
 
 	#slot-wheel {
@@ -44,7 +46,29 @@
 				window.animation_enter = true;
 				$('#slot-wheel').animate(cssboom, "slow", "swing", function(){
 					window.animation_enter = false;
-
+				/*if (! window.animation_enter){
+					function showWidth(ele, w) {
+					$('#slot-wheel').text("The width for the " + ele + 
+                " is " + w + "px.");
+					$('#slot-wheel').animate(function(){
+						showWidth("slot-wheel", $('#slot-wheel')
+					});
+					});
+				
+				});
+*/
+			/*if (! window.animation_enter){
+					*/
+					console.log("yourule")
+					function showWidth(ele, w) {
+					$('#slot-wheel').text("The width for the " + ele + 
+                " is " + w + "px.");
+					$('#slot-wheel').animate(function(){
+						showWidth("slot-wheel", $('#slot-wheel')
+					});
+					});
+				
+				});
 			});
 			}
 
