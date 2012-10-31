@@ -31,59 +31,57 @@
 	</style>
 
 	<script>
-
-	$(document).ready(function()
-	{
-		$('#slot-window').mouseenter(function()
-		{	
-	
-			var offset = Math.round(Math.random()*7)*14
-			console.log("hover on", offset)
-			var cssboom = {top: "-" + offset + "px"}
-
-			if (! window.animation_enter)
-			{
-				window.animation_enter = true;
-				$('#slot-wheel').animate(cssboom, "slow", "swing", function(){
-					window.animation_enter = false;
-				/*if (! window.animation_enter){
-					function showWidth(ele, w) {
-					$('#slot-wheel').text("The width for the " + ele + 
-                " is " + w + "px.");
-					$('#slot-wheel').animate(function(){
-						showWidth("slot-wheel", $('#slot-wheel')
-					});
-					});
-				
-				});
-*/
-			/*if (! window.animation_enter){
-					*/
-					console.log("yourule")
-					function showWidth(ele, w) {
-					$('#slot-wheel').text("The width for the " + ele + 
-                " is " + w + "px.");
-					$('#slot-wheel').animate(function(){
-						showWidth("slot-wheel", $('#slot-wheel')
-					});
-					});
-				
-				});
-			});
-			}
-
-			
-		});
-		if (! window.animation_leave)
-		$('#slot-window').mouseleave(function()
+//$ is a function.  whatever comes after it is in jQ library.  $ is an object defined in jQ.
+		$(document).ready(function()
 		{
-			window.animation_leave = true;
-			var reset = {top: "0" + "px"}
-			$('#slot-wheel').animate(reset, "slow")
-			window.animation_leave = false;
-		});
+			$('#slot-window').mouseenter(function()
+			{	
+				var offset = Math.round(Math.random()*7)*14
+				console.log("hover on", offset)
+				var cssboom = {top: "-" + offset + "px"}
 
-	});
+				if (! window.animation_enter)
+				{
+					window.animation_enter = true;
+					$('#slot-wheel').animate(cssboom, "slow", "swing", function(){
+						window.animation_enter = false;
+					/*if (! window.animation_enter){
+						function showWidth(ele, w) {
+						$('#slot-wheel').text("The width for the " + ele + 
+	                " is " + w + "px.");
+						$('#slot-wheel').animate(function(){
+							showWidth("slot-wheel", $('#slot-wheel')
+						});
+						});
+					
+					});
+
+				if (! window.animation_enter){
+						
+						console.log("yourule")
+						function showWidth(ele, w) {
+						$('#slot-wheel').text("The width for the " + ele + 
+	                " is " + w + "px.");
+						$('#slot-wheel').animate(function(){
+							showWidth("slot-wheel", $('#slot-wheel')
+						});
+						});*/
+					
+					});
+				}
+			});
+
+				if (! window.animation_leave)
+				$('#slot-window').mouseleave(function()
+				{
+					//window here is an object (not a function - no parens) and animation_leave is an attribute
+					window.animation_leave = true;
+					var reset = {top: "0" + "px"}
+					$('#slot-wheel').animate(reset, "slow")
+					window.animation_leave = false;
+				});
+		});
+		
 	</script>
 	
 	</head>
